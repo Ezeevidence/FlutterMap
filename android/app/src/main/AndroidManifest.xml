@@ -3,6 +3,8 @@
    <application
         android:label="dzentra_google_maps_api"
         android:icon="@mipmap/ic_launcher">
+
+       <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
