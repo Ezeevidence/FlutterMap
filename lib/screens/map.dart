@@ -1,4 +1,5 @@
 import 'dart:math' show cos, sqrt, asin;
+import 'package:dzentra_google_maps_api/screens/calculated_distance.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
@@ -485,16 +486,18 @@ class _MapsState extends State<Maps> {
                                 );
                               }
                             });
-                          }
+
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => CalculatedDistance(distance: '$_placeDistance km',),
+                                ));                          }
                               : null,
-                          // color: Colors.red,
-                          // shape: RoundedRectangleBorder(
-                          //   borderRadius: BorderRadius.circular(20.0),
-                          // ),
+
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
-                              'Show Route'.toUpperCase(),
+                              'CALCULATE DISTANCE',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20.0,
